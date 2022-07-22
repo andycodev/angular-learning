@@ -1,0 +1,62 @@
+
+
+
+
+
+<h2>Interpolación</h2>
+<p>{{ title }}button</p>
+<small>autor: {{ name }}</small>
+
+<hr />
+
+<h2>Data Binding</h2>
+<p *ngIf="usuario">Mi usuario es: {{ usuario }}</p>
+<input type="text" [(ngModel)]="usuario" />
+
+<hr />
+
+<h2>Directivas ngFor - ngIf</h2>
+<h4>Ciudades</h4>
+<ul>
+    <li *ngFor="let ciudad of ciudades; let i = index" [ngClass]="['selected', 'grey']">
+        {{ i + 1 }} - {{ ciudad }}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let ciudad of ciudades; let i = index" [ngClass]="{
+      selected: ciudad === 'Chongoyape',
+      green: ciudad != 'Chongoyape'
+    }">
+        {{ i + 1 }} - {{ ciudad }}
+    </li>
+</ul>
+
+<ul>
+    <li *ngFor="let ciudad of ciudades; let i = index" [ngStyle]="{
+      color: 'orange',
+      'background-color': ciudad === 'Chiclayo' ? 'green' : 'grey'
+    }">
+        {{ i + 1 }} - {{ ciudad }}
+    </li>
+</ul>
+
+<hr />
+
+<h2>Event Binding (responder a acciones del usuario)</h2>
+
+<ul>
+    <li *ngFor="let ciudad of ciudades; let i = index" (click)="seleccionarCiudad(ciudad)" class="cursor"
+        [ngClass]="{ selected: ciudad === selection }">
+        {{ ciudad }}
+    </li>
+</ul>
+
+<div *ngIf="selection">
+    <p>Tus ciudad es: {{ selection }}</p>
+    <!--  <button (click)="limpiarSelection()" class="btn">Limpiar selección</button> -->
+    <app-button (click)="limpiarSelection()" [color]="'blue'" [label]="'Limpiar selección'" [selection]="selection">
+    </app-button>
+    <!--   <app-button (click)="limpiarSelection()" [color]="'green'" [label]="'Limpiar selección 1'"></app-button>
+    <app-button (click)="limpiarSelection()" [color]="'red'" [label]="'Limpiar selección 2'"></app-button> -->
+</div>

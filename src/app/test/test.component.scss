@@ -1,0 +1,31 @@
+.selected {
+    background-color: #5DADE2;
+    color: white;
+    padding: 10px;
+}
+
+.unSelected {
+    background-color: white;
+    padding: 10px;
+}
+
+.grey {
+    color: gray;;
+}
+
+.green {
+    color: green;
+}
+
+.btn {
+    background-color: #5DADE2;
+    color: #FFFFFF;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.cursor {
+    cursor: pointer;
+}
