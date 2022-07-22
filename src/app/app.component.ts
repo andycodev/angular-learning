@@ -41,6 +41,10 @@ export class AppComponent implements OnInit{
     this.ciudadSeleccionada = ciudad;
     console.log('La ciudad es: ', ciudad);
   }
+
+  public limpiarCiudadSeleccionada(){
+    this.ciudadSeleccionada = '';
+  }
   
 
 }

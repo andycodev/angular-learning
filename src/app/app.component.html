@@ -13,9 +13,11 @@
     
         <div class="col-md-4">
            <h4>Su ciudad seleccionada es:</h4>
-           <span *ngIf="!ciudadSeleccionada" class="text-muted">No se seleccionó ninguna ciudad</span>
+           <p *ngIf="!ciudadSeleccionada" class="display-4 text-muted">Sin seleccionar</p>
            <p class="display-4 text-primary">{{ ciudadSeleccionada }}</p>
-          
+            <div *ngIf="ciudadSeleccionada" class="d-grid gap-2">
+                <button (click)="limpiarCiudadSeleccionada()" class="btn btn-danger btn-block">Limpiar</button>
+            </div>
         </div>
 
     </div>
